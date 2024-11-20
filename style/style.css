@@ -13,13 +13,17 @@ body {
   font: 400 1em/1.5 "Neuton";
   color: rgba(255, 255, 255, 0.25);
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-  display: grid;
-  place-items: center;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 3em;
+  padding: 1em;
 }
 
 .introdution {
@@ -28,6 +32,7 @@ main {
   justify-content: center;
   flex-direction: column;
   gap: 3rem;
+  width: 100%;
 }
 
 .introdution .description {
@@ -35,8 +40,10 @@ main {
   font: 400 "Oswald", sans-serif;
   font-size: 1.2rem;
   letter-spacing: 0.5;
-  width: 500px;
+  max-width: 500px;
   color: #fefefe;
+  text-align: center;
+  padding: 0 1em;
 }
 
 .introdution img {
@@ -44,19 +51,16 @@ main {
   height: auto;
   object-fit: cover;
   border-radius: 50%;
-
   overflow: clip;
 }
 
 figure img {
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 figure img:hover {
@@ -71,6 +75,7 @@ article {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 1em;
 }
 
 .p {
@@ -79,22 +84,19 @@ article {
   border: 4px double rgba(255, 255, 255, 0.25);
   padding: 2em;
   border-width: 4px 0;
+}
 
-  span {
-    font: 700 3em/1 "Oswald", sans-serif;
-    letter-spacing: 0;
-    text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
-
-    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: aitf 80s linear infinite;
-
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-  }
+.p span {
+  font: 700 3em/1 "Oswald", sans-serif;
+  letter-spacing: 0;
+  text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+  background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: aitf 80s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
 }
 
 @-webkit-keyframes aitf {
@@ -105,8 +107,6 @@ article {
     background-position: 100% 50%;
   }
 }
-
-/* links */
 
 .btn-slide2 {
   position: relative;
@@ -122,10 +122,6 @@ article {
   transition: 0.5s;
 }
 
-.btn-slide2 {
-  border: 2px solid #efa666;
-}
-
 .btn-slide2:hover {
   background-color: #efa666;
 }
@@ -136,12 +132,9 @@ article {
   background-color: #fdfdfd;
 }
 
-.btn-slide2:hover span.circle2 {
-  color: #efa666;
-}
 .btn-slide2:hover span.title2 {
-  left: 40px;
   opacity: 0;
+  left: 40px;
 }
 
 .btn-slide2:hover span.title-hover2 {
@@ -163,9 +156,6 @@ article {
   left: 0;
   transition: 0.5s;
   border-radius: 50%;
-}
-
-.btn-slide2 span.circle2 {
   background-color: #efa666;
 }
 
@@ -178,54 +168,41 @@ article {
   font-size: 16px;
   font-weight: bold;
   transition: 0.5s;
-}
-
-.btn-slide2 span.title2,
-.btn-slide2 span.title-hover2 {
   color: #efa666;
-  left: 80px;
 }
 
 .btn-slide2 span.title-hover2 {
-  left: 80px;
   opacity: 0;
-}
-
-.btn-slide2 span.title-hover2 {
   color: #fff;
 }
 
-/* insta */
-
 .content {
   display: flex;
-  flex-basis: auto;
-  flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-
   border: 4px double #cecece;
   border-width: 6px 0;
   padding: 2em;
   margin-top: 20px;
 }
+
 .content p {
   text-align: center;
-  float: left;
   margin: 8px 0px 0px 22px;
 }
+
 .content img {
   width: 40px;
-  float: left;
 }
 
 .content a.animation:link,
 .content a.animation:visited {
   position: relative;
   display: block;
-  width: 555px;
+  width: 100%;
+  max-width: 555px;
   margin: 30px auto 0;
   padding: 14px 15px;
   border: 1px solid #fff;
@@ -236,59 +213,17 @@ article {
   text-transform: uppercase;
   overflow: hidden;
   letter-spacing: 0.08em;
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
-.content a.animation:link:after,
-.content a.animation:visited:after {
-  content: "";
-  position: absolute;
-  background: none repeat scroll 0 0 #fff;
-  height: 0%;
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  z-index: -1;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-a.animation:link:hover,
-a.animation:visited:hover {
-  color: #333;
-  text-shadow: none;
-}
-a.animation:link:hover:after,
-a.animation:visited:hover:after {
-  height: 420%;
-}
-
-a.animation.first_b:after {
-  -moz-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-  -ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-  -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-  transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-}
-a.animation.secondary_b:after {
-  -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-  -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-  -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-  transform: translateX(-50%) translateY(-50%) rotate(45deg);
 }
 
 footer {
-	background-color: #222;
-	color: #fff;
-
-	font-family: sans-serif;
-	font-size: 1rem;
+  background-color: #222;
+  width: 100%;
+  padding: 1em;
+  text-align: center;
 }
 
 footer a {
-	color:#cecece;
-	border-bottom: 1px solid #fff;
+  color: #cecece;
+  border-bottom: 1px solid #fff;
 }
