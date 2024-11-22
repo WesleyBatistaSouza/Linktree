@@ -6,7 +6,8 @@
 }
 
 body {
-  width: 100%;
+  max-width: 100%;
+  width: 0 auto;
   height: 100vh;
   background-color: #333;
   color: #fff;
@@ -82,12 +83,11 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.5em;
   border: 4px double rgba(255, 255, 255, 0.25);
-  padding: 2em;
   border-width: 4px 0;
 }
 
 h1 span {
-  font: 700 3em/1 "Oswald", sans-serif;
+  font: 700 2.4em/1 "Oswald", sans-serif;
   letter-spacing: 0;
   text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
   background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
@@ -265,4 +265,122 @@ footer {
 footer a {
   color: #cecece;
   border-bottom: 1px solid #fff;
+}
+
+/* Estilos base já definidos acima */
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  .introdution {
+    gap: 2rem;
+    padding: 1em;
+  }
+
+  .introdution img {
+    width: 150px;
+  }
+
+  .introdution .description {
+    font-size: 1rem;
+    padding: 0 0.5em;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    padding: 1em;
+    letter-spacing: 0.3em;
+  }
+
+  .btn-slide2 {
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .btn-slide2 span.circle2 {
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+  }
+
+  .btn-slide2 span.title2,
+  .btn-slide2 span.title-hover2 {
+    font-size: 14px;
+    left: 60px;
+  }
+
+  .content {
+    padding: 1.5em;
+    margin-top: 10px;
+  }
+
+  .content img {
+    width: 30px;
+  }
+
+  .content a.animation:link,
+  .content a.animation:visited {
+    padding: 10px 12px;
+    font-size: 0.9em;
+  }
+
+  footer {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 580px) {
+  .introdution img {
+    width: 100px;
+  }
+
+  .introdution .description {
+    font-size: 0.9rem;
+    padding: 0 0.5em;
+  }
+
+  h1 {
+    font-size: 1.2em;
+    padding: 0.5em;
+  }
+
+  .btn-slide2 {
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+  }
+
+  .btn-slide2 span.circle2 {
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+  }
+
+  .btn-slide2 span.title2,
+  .btn-slide2 span.title-hover2 {
+    font-size: 12px;
+    left: 50px;
+  }
+
+  .content {
+    padding: 1em;
+  }
+
+  .content img {
+    width: 25px;
+  }
+
+  .content a.animation:link,
+  .content a.animation:visited {
+    padding: 8px 10px;
+    font-size: 0.8em;
+  }
+
+  footer {
+    font-size: 1em;
+  }
 }
